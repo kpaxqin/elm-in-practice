@@ -1,0 +1,16 @@
+{
+  "name": "elm-in-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "elm-install": "elm-package install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "elm": "^0.17.0",
+    "elm-live": "^2.3.0"
+  }
+}
