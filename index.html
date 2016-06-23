@@ -5,7 +5,12 @@
     <title>Elm in practice</title>
   </head>
   <body>
-    <div id="container" class="">
+    <div id="container">
     </div>
+    <script type="text/javascript" src="./build/index.js"></script>
+    <script type="text/javascript">
+      var node = document.getElementById('container');
+      var app = Elm.Main.embed(node);
+    </script>
   </body>
 </html>
