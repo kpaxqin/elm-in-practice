@@ -6867,8 +6867,8 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _kpaxqin$elm_in_practice$Main$initModel = 3;
-var _kpaxqin$elm_in_practice$Main$update = F2(
+var _kpaxqin$elm_in_practice$Counter$initModel = 3;
+var _kpaxqin$elm_in_practice$Counter$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
 		if (_p0.ctor === 'Increment') {
@@ -6877,9 +6877,9 @@ var _kpaxqin$elm_in_practice$Main$update = F2(
 			return model - 1;
 		}
 	});
-var _kpaxqin$elm_in_practice$Main$Decrement = {ctor: 'Decrement'};
-var _kpaxqin$elm_in_practice$Main$Increment = {ctor: 'Increment'};
-var _kpaxqin$elm_in_practice$Main$view = function (model) {
+var _kpaxqin$elm_in_practice$Counter$Decrement = {ctor: 'Decrement'};
+var _kpaxqin$elm_in_practice$Counter$Increment = {ctor: 'Increment'};
+var _kpaxqin$elm_in_practice$Counter$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -6890,7 +6890,7 @@ var _kpaxqin$elm_in_practice$Main$view = function (model) {
 				_elm_lang$html$Html$button,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$Main$Decrement)
+						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$Counter$Decrement)
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -6902,7 +6902,7 @@ var _kpaxqin$elm_in_practice$Main$view = function (model) {
 				_elm_lang$html$Html$button,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$Main$Increment)
+						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$Counter$Increment)
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -6910,9 +6910,10 @@ var _kpaxqin$elm_in_practice$Main$view = function (model) {
 					]))
 			]));
 };
+
 var _kpaxqin$elm_in_practice$Main$main = {
 	main: _elm_lang$html$Html_App$beginnerProgram(
-		{model: _kpaxqin$elm_in_practice$Main$initModel, view: _kpaxqin$elm_in_practice$Main$view, update: _kpaxqin$elm_in_practice$Main$update})
+		{model: _kpaxqin$elm_in_practice$Counter$initModel, view: _kpaxqin$elm_in_practice$Counter$view, update: _kpaxqin$elm_in_practice$Counter$update})
 };
 
 var Elm = {};
