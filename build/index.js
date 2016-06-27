@@ -6911,9 +6911,110 @@ var _kpaxqin$elm_in_practice$Counter$view = function (model) {
 			]));
 };
 
+var _kpaxqin$elm_in_practice$CounterList$initModel = {
+	uid: 0,
+	counters: _elm_lang$core$Native_List.fromArray(
+		[
+			{id: 0, counter: _kpaxqin$elm_in_practice$Counter$initModel}
+		])
+};
+var _kpaxqin$elm_in_practice$CounterList$updateCounter = F3(
+	function (id, counterMsg, indexedCounter) {
+		return _elm_lang$core$Native_Utils.eq(id, indexedCounter.id) ? _elm_lang$core$Native_Utils.update(
+			indexedCounter,
+			{
+				counter: A2(_kpaxqin$elm_in_practice$Counter$update, counterMsg, indexedCounter.counter)
+			}) : indexedCounter;
+	});
+var _kpaxqin$elm_in_practice$CounterList$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'Insert':
+				var id = model.uid + 1;
+				return {
+					uid: id,
+					counters: A2(
+						_elm_lang$core$List_ops['::'],
+						{id: id, counter: _kpaxqin$elm_in_practice$Counter$initModel},
+						model.counters)
+				};
+			case 'Remove':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						counters: A2(_elm_lang$core$List$drop, 1, model.counters)
+					});
+			default:
+				var counterMapper = A2(_kpaxqin$elm_in_practice$CounterList$updateCounter, _p0._0, _p0._1);
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						counters: A2(_elm_lang$core$List$map, counterMapper, model.counters)
+					});
+		}
+	});
+var _kpaxqin$elm_in_practice$CounterList$IndexedCounter = F2(
+	function (a, b) {
+		return {id: a, counter: b};
+	});
+var _kpaxqin$elm_in_practice$CounterList$Model = F2(
+	function (a, b) {
+		return {uid: a, counters: b};
+	});
+var _kpaxqin$elm_in_practice$CounterList$Modify = F2(
+	function (a, b) {
+		return {ctor: 'Modify', _0: a, _1: b};
+	});
+var _kpaxqin$elm_in_practice$CounterList$showCounter = function (_p1) {
+	var _p2 = _p1;
+	return A2(
+		_elm_lang$html$Html_App$map,
+		function (counterMsg) {
+			return A2(_kpaxqin$elm_in_practice$CounterList$Modify, _p2.id, counterMsg);
+		},
+		_kpaxqin$elm_in_practice$Counter$view(_p2.counter));
+};
+var _kpaxqin$elm_in_practice$CounterList$Remove = {ctor: 'Remove'};
+var _kpaxqin$elm_in_practice$CounterList$Insert = {ctor: 'Insert'};
+var _kpaxqin$elm_in_practice$CounterList$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$CounterList$Insert)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Insert')
+					])),
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Events$onClick(_kpaxqin$elm_in_practice$CounterList$Remove)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Remove')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				A2(_elm_lang$core$List$map, _kpaxqin$elm_in_practice$CounterList$showCounter, model.counters))
+			]));
+};
+
 var _kpaxqin$elm_in_practice$Main$main = {
 	main: _elm_lang$html$Html_App$beginnerProgram(
-		{model: _kpaxqin$elm_in_practice$Counter$initModel, view: _kpaxqin$elm_in_practice$Counter$view, update: _kpaxqin$elm_in_practice$Counter$update})
+		{model: _kpaxqin$elm_in_practice$CounterList$initModel, view: _kpaxqin$elm_in_practice$CounterList$view, update: _kpaxqin$elm_in_practice$CounterList$update})
 };
 
 var Elm = {};

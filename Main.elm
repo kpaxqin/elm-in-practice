@@ -1,7 +1,7 @@
 import Html.App exposing (beginnerProgram)
-import Counter
+import CounterList
 
 main = beginnerProgram {
-  model = Counter.initModel,
-  view = Counter.view,
-  update = Counter.update}
+  model = CounterList.initModel,
+  view = CounterList.view,
+  update = CounterList.update}
